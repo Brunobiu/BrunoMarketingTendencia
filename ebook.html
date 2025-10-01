@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="pt-BR" class="no-js">
 <head>
 
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bruno | Marketing Digital</title>
@@ -13,81 +11,211 @@
         document.documentElement.classList.add('js');
     </script>
 
-    <!-- CSS
-    ================================================== -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- favicons
-    ================================================== -->
+    <!-- favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
 
-</head>
+    <style>
+        /* ==== ESTILO DO MODAL ==== */
+        .modal {
+          display: none; 
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(6px);
+        }
 
+        .modal-content {
+          background: #1a1a1a;
+          color: #fff;
+          margin: 10% auto;
+          padding: 30px;
+          border-radius: 12px;
+          width: 90%;
+          max-width: 400px;
+          text-align: center;
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 24px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+
+        .close:hover {
+          color: #fff;
+        }
+
+        #ebookForm input[type="email"] {
+          width: 100%;
+          padding: 12px;
+          margin: 15px 0;
+          border-radius: 8px;
+          border: none;
+          font-size: 16px;
+        }
+
+        #ebookForm button {
+          width: 100%;
+        }
+
+        .modal {
+        display: none; 
+        position: fixed;
+        z-index: 999;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        }
+
+        .modal__content {
+        background: #fff;
+        max-width: 400px;
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: center;
+        }
+
+        .modal__close {
+        float: right;
+        font-size: 1.5rem;
+        cursor: pointer;
+        }
+
+    </style>
+</head>
 
 <body id="top">
 
- 
-        <footer id="footer" class="s-footer target-section">
+    <footer id="footer" class="s-footer target-section">
 
-            <div class="row">
-                <div class="column lg-12">
-                    <div class="section-header light-on-dark" data-num="Ebook">
-                        <h2 class="text-display-title">Ebook Grátis</h2>
-                    </div> 
-                </div>
+        <div class="row">
+            <div class="column lg-12">
+                <div class="section-header light-on-dark" data-num="Ebook">
+                    <h2 class="text-display-title">Ebook Grátis</h2>
+                </div> 
+            </div>
+        </div>
+
+        <div class="row s-footer__content">
+
+            <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
+                <p class="attention-getter">
+                O Futuro do Digital 2026 é um guia rápido e objetivo sobre as principais transformações que já estão acontecendo no mercado. Da inteligência artificial às novas estratégias de marketing para negócios, passando por campanhas digitais e automações, 
+                você vai entender como essas tendências estão moldando a forma de vender, criar e crescer no ambiente online. Este material 
+                foi feito para quem quer clareza em meio a tantas mudanças — simples, direto e prático.</p>               
+            </div> 
+
+            <!-- Imagem do ebook -->
+            <div class="column xl-6 md-12 s-footer__block s-footer__site-links" style="text-align:center;">
+                <img src="images/ebook.png" alt="Ebook Futuro do Digital" style="max-width:100%; height:auto; border-radius:10px;">
+            </div> 
+
+        </div>
+
+        <div class="row s-footer__buttons">
+            <div class="column xl-6 tab-12">
+                <a href="#0" id="openModal" class="btn btn--primary btn--large u-fullwidth">Download Ebook</a>
             </div>
 
-            <div class="row s-footer__content">
-
-                <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
-                    <p class="attention-getter">
-                    O Futuro do Digital 2026 é um guia rápido e objetivo sobre as principais transformações que já estão acontecendo no mercado. Da inteligência artificial às novas estratégias de marketing para negócios, passando por campanhas digitais e automações, 
-                    você vai entender como essas tendências estão moldando a forma de vender, criar e crescer no ambiente online. Este material 
-                    foi feito para quem quer clareza em meio a tantas mudanças — simples, direto e prático.</p>               
-                </div> 
-
-                <!-- Substituição do bloco de links por imagem -->
-                <div class="column xl-6 md-12 s-footer__block s-footer__site-links" style="text-align:center;">
-                    <img src="images/ebook.png" alt="Ebook Futuro do Digital" style="max-width:100%; height:auto; border-radius:10px;">
-                </div> 
-
-                
-                
-
+            <div class="column xl-6 tab-12">                    
+                <a href="index.html" class="btn btn--stroke btn--large u-fullwidth">Voltar ao início</a>
             </div>
+        </div>              
+        
+    </footer> 
 
-            
+<!-- Modal -->
+<div id="ebookModal" class="modal">
+  <div class="modal__content">
+    <span class="modal__close">&times;</span>
+    <h2>Ebook Grátis</h2>
+    <p>Digite seu e-mail para receber o download imediato:</p>
+
+    <form id="ebookForm">
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        placeholder="Digite seu e-mail" 
+        required 
+        class="form-input"
+      >
+      <button type="submit" class="btn btn--stroke">📥 Baixar Ebook</button>
+    </form>
+  </div>
+</div>
 
 
 
-            <div class="row s-footer__buttons">
-               
-                <div class="column xl-6 tab-12">
-                    <a href="mailto:#0" class="btn btn--primary btn--large u-fullwidth">Download Ebook</a>
-                </div>
-
-                <div class="column xl-6 tab-12">                    
-                    <a href="index.html" class="btn btn--stroke btn--large u-fullwidth">Voltar ao início</a>
-                </div>
-          
-                
-            
-            </div>              
-            
-                     
-        </footer> 
-
-    </div> <!-- end page-wrap -->
-
-
-    <!-- Java Script
-    ================================================== -->
+    <!-- Scripts -->
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+<script>
+  // Abrir e fechar modal
+  const modal = document.getElementById("ebookModal");
+  const openBtn = document.getElementById("openModal");
+  const closeBtn = document.querySelector(".modal__close");
+
+  if (openBtn) {
+    openBtn.onclick = () => modal.style.display = "block";
+  }
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+
+  // Captura e envio AJAX
+  document.getElementById("ebookForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    let form = e.target;
+    let data = new FormData(form);
+
+    try {
+      let response = await fetch("https://formspree.io/f/mdkwzkkj", {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        form.reset();
+
+        // 🔽 Força o download do ebook
+        window.open(
+          "https://drive.google.com/uc?export=download&id=1-kFOUU066v9-czYLmQsHEKXbs6JfocRJ",
+          "_blank"
+        );
+
+        // 🔽 Redireciona para index.html após 2s
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 2000);
+
+        modal.style.display = "none"; // Fecha modal
+      } else {
+        alert("Erro ao enviar o formulário. Verifique o Formspree.");
+      }
+    } catch (err) {
+      alert("Erro de conexão. Verifique sua internet.");
+    }
+  });
+</script>
+
 
 </body>
 </html>
